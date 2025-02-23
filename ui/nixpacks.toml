@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["flutter", "dart", "curl", "wget"]
+nixPkgs = ["flutter", "curl", "wget"]
 
 [phases.install]
 cmds = ["flutter pub get"]
