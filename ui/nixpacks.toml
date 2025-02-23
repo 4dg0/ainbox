@@ -1,9 +1,8 @@
 [phases.setup]
-nixPkgs = ["flutter", "curl", "wget"]
+nixPkgs = ["flutter", "nginx"]
 
 [phases.install]
 cmds = [
-  "flutter upgrade",
   "flutter --disable-telemetry",
   "flutter pub get"
 ]
@@ -11,5 +10,5 @@ cmds = [
 [phases.build]
 cmds = ["flutter build web --release"]
 
-[start]
-cmds = ["echo 'Hello, World!'"]
+[phases.start]
+cmds = ["nginx -g 'daemon off;'"]
