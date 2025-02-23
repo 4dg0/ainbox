@@ -1,11 +1,11 @@
 [phases.setup]
-nixPkgs = ["flutter", "nginx"]
+nixPkgs = ["flutter", "curl", "wget"]
 
 [phases.install]
 cmds = [
-  "flutter --disable-telemetry",
-  "flutter pub get"
-]
+    "flutter --disable-telemetry",
+    "flutter pub get"
+    ]
 
 [phases.build]
 cmds = ["flutter build web --release"]
