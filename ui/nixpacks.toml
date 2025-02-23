@@ -9,6 +9,3 @@ cmds = [
 
 [phases.build]
 cmds = ["flutter build web --release"]
-
-[phases.start]
-cmds = ["nginx -g 'daemon off;'"]
