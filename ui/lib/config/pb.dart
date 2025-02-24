@@ -1,6 +1,7 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pocketbase/pocketbase.dart';
 
 final pbProvider = Provider<PocketBase>((ref) {
-  return PocketBase('https://your-pocketbase-url.com');
+  return PocketBase(dotenv.env['PB_URL']!);
 });
