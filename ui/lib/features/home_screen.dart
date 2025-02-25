@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:ui/features/auth/auth_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

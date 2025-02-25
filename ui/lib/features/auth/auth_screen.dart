@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 bool isAuthenticated = false;
 
 class AuthScreen extends StatelessWidget {
-  const AuthScreen({Key? key}) : super(key: key);
+  const AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
