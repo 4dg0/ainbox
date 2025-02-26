@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-bool isAuthenticated = false;
+import 'package:ainbox/features/auth/signup_tab.dart';
+import 'package:ainbox/features/auth/signin_tab.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Login")),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            isAuthenticated = true;
-            context.go('/home');
-          },
-          child: const Text("Login"),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Authentication"),
+          bottom: const TabBar(
+            tabs: [Tab(text: "Sign In"), Tab(text: "Sign Up")],
+          ),
         ),
+        body: const TabBarView(children: [SignInTab(), SignUpTab()]),
       ),
     );
   }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ainbox/features/auth/auth_provider.dart';
 
-import 'package:ui/features/auth/auth_screen.dart';
-
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(title: const Text("Home")),
       body: Center(
@@ -20,9 +20,13 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
+              onPressed: () => context.go('/payment'),
+              child: const Text("Go to Payment"),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
               onPressed: () {
-                isAuthenticated = false;
-                context.go('/auth');
+                ref.read(authProvider.notifier).signOut(context);
               },
               child: const Text("Logout"),
             ),

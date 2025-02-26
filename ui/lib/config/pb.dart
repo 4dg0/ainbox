@@ -1,7 +1,7 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pocketbase/pocketbase.dart';
-import 'package:ui/features/auth/token_service.dart';
+import 'package:ainbox/features/auth/token_service.dart';
 
 final pbProvider = FutureProvider<PocketBase>((ref) async {
   final pb = PocketBase(dotenv.env['PB_URL']!);

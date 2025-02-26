@@ -1,4 +1,4 @@
-package com.example.ui
+package com.ainbox.app
 
 import io.flutter.embedding.android.FlutterActivity
 
