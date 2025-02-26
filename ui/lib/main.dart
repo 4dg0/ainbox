@@ -18,35 +18,8 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final router = ref.watch(routerProvider);
+    final router = ref.read(routerProvider);
 
-    return MaterialApp.router(
-      title: 'ainbox',
-      routerConfig: router,
-      builder: (context, child) {
-        if (child == null) {
-          return const SplashScreen();
-        }
-        return ColoredBox(
-          color:
-              Theme.of(context).brightness == Brightness.light
-                  ? Colors.pink
-                  : Colors.red,
-          child: child,
-        );
-      },
-    );
-  }
-}
-
-class SplashScreen extends StatelessWidget {
-  const SplashScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(child: CircularProgressIndicator()),
-    );
+    return MaterialApp.router(title: 'ainbox', routerConfig: router);
   }
 }

@@ -57,9 +57,8 @@ class AuthNotifier extends Notifier<AsyncValue<void>> {
             },
           );
 
-      Future.microtask(() {
-        signIn(email, password, context);
-      });
+      if (!context.mounted) return;
+      await signIn(email, password, context);
     } catch (e, stack) {
       state = AsyncError(e, stack);
       if (!context.mounted) return;
